@@ -15,9 +15,12 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <!--NEW SECTION ADDED-->
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <!--onlcikc and ondbclick function added to open and close contact form-->
+            <a onclick="openForm()" ondbclick="closeForm()" class="contact">Contact</a>
         </div>
 		<!--END NAVBAR-->
 		
@@ -55,6 +58,58 @@
         </div>
 		<!--END VIDEO TEXT-->
 
+        <!--NEW SLIDESHOW SECTION ADDED-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!--slide 1 0f 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./flix/5.jpg" alt="Teamwork">
+                        <div class="text">I'd be glad to assist you on your next project!</div>
+                    </div>
+                    <!--slide 2 0f 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./flix/6.png" alt="HTML, CSS and JS logos">
+                        <div class="text">I am a full-stack software developer,<br> currently training in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!--slide 3 0f 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./flix/7.jpg" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!--slide 4 0f 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="" alt="">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                    </div>
+                    <!--slide 5 0f 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./flix/9.jpg" alt="SQL">
+                        <div class="text">back end developement, databases and SQL.</div>
+                    </div>
+                    <!--slide 6 0f 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="./flix/10.jpg" alt="Computer">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!--PREVIOUS AND NEXT BUTTONS-->
+                    <a class="Previous onclick=plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br><!--ADDS A SPACE BETWEEN SLIDEDHOW IMAGES AND DOTS-->
+
+                <!--slideshow dots(another way to navigate thru pictures-->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+        </div>
+
         <!--About section-->
         <div class="Row" id="About">
         <!--Left column-->
@@ -67,7 +122,7 @@
                 <p>
                     I am an in training software developer who loves to learn new things! I enjoy spending time outdoors with my dogs and my family.
                     <br>
-                    <br>I am a current student at <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>, and enrolled in their Software Developer Boot Camp, and trained as an HTML and CSS developer so far.
+                    <br>I am a current student at <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>, and enrolled in their Software Developer Boot Camp, and trained as an HTML, CSS and JavaScript developer so far.
                     <br>
                     <br>I love working with people as a team, and would enjoy working with you on your next project. Please <a href="#Contact">Contact</a> me below if interested!
                 </p>
@@ -96,55 +151,33 @@
 		
 
         <!--Contact section-->
-        <div class="Row" id="Contact">
-		
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="./flix/contact.png" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                
-						<div class="form-rsvp">
-							<form action="" method="post">
-								<input class="rsvp" type="text" value="" placeholder="First Name">
-								<input class="rsvp" type="text" value="" placeholder="Last Name">
-								<input class="rsvp" type="text" value="" placeholder="Email Address">
-								<input class="rsvp" type="text" value="" placeholder="Message">
-								<div class="form-spacer">
-									
-								</div>
-								<div class="submit">
-									<input type="submit" value="Submit">
-								</div>
-							</form>
-						</div>
-			</div>
-
-
-		</div>
-
-    </section>
-        <!--END RSVP-->
-				
-				
-				
-				
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Type your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message">
+                    
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                    
+                </form>
             </div>
         </div>
-		<!--END CONTACT SECTION-->
 
-        <!--Footer section-->
+        <!--footer section-->
+
         <footer>
-            <p>
-                <p class="center">&copy Prosper Consulting Inc.| <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
-                <br>
-            </p>
+            <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p><br>
         </footer>
-		<!--END FOOTER SECTION-->
-		
-		
+        <script src="portfolio.js"></script>
     </body>
 </html>
+           
